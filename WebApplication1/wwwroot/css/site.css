@@ -19,6 +19,7 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-color: rgb(198, 215, 215);
 }
 .table-sm th, .table-sm td {
   font-size: 0.875rem;  /* reduce el tamaño de la fuente */
@@ -46,5 +47,30 @@ body {
     max-height: 100%;
     max-width: 100%;
 }
+.titulo-destacado {
+  font-size: 66px; /* Tamaño de fuente grande */
+  color: #000000; /* Color azul */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra de texto */
+  margin-bottom: 20px; /* Espacio inferior */
+  font-weight: bold;
+}
+/* Estilos para centrar la imagen */
+.text-center1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh; /* Ajusta la altura del contenedor según tus necesidades */
+}
+
+/* Estilos para la imagen */
+img {
+  max-width: 100%; /* Ajusta el ancho máximo de la imagen */
+  max-height: 300px; /* Ajusta la altura máxima de la imagen */
+  margin-top: 20px; /* Agrega un espacio superior a la imagen */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Agrega una sombra a la imagen */
+}
+
+
 
 

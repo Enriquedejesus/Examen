@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using WebApplication1.Hubs;
 using WebApplication1.Models;
 using Microsoft.AspNetCore.SignalR;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,12 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<DispositivoDBContext>(opciones => {
     opciones.UseSqlServer(
         builder.Configuration.GetConnectionString("BaseDatosExamen"));
+});
+builder.Services.AddAuthentication(
+    CookieAuthenticationDefaults.AuthenticationScheme
+).AddCookie(opciones =>{
+    opciones.LoginPath = new PathString("/Usuarios/Login");
+    opciones.AccessDeniedPath = new PathString("/Usuarios/NoPermitido");
 });
 
 var app = builder.Build();
@@ -37,9 +44,9 @@ app.MapControllerRoute(
 
     
 
-app.MapControllerRoute(
+/* app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}"); */
 
 app.MapHub<MyHub>("/myHub");
 
