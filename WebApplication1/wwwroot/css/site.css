@@ -1,0 +1,50 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+.table-sm th, .table-sm td {
+  font-size: 0.875rem;  /* reduce el tamaño de la fuente */
+  padding: 0.25rem;     /* reduce el padding de las celdas */
+  max-width: 1200px;    /* establece un ancho máximo */
+    margin: 0 auto; 
+}
+.graficas-wrapper {
+  display: flex;           /* Esto activará flexbox en el contenedor */
+  justify-content: space-between; /* Esto distribuirá las gráficas con espacio entre ellas */
+               /* Esto agregará un espacio entre las gráficas */
+}
+
+.grafica-container,
+#estatusChartContainer {
+    width: 45%;  /* ajusta según tus necesidades */
+    height: 200px;  /* ajusta según tus necesidades */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#estatusChart, 
+#litrosChart {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+
